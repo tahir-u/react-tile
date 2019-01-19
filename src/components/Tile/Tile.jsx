@@ -3,15 +3,18 @@ import styled from 'styled-components';
 
 const Tile = ({
   background,
-  isColored
+  isColored,
+  roundedCorners
 }) => {
   return (
-    <Wrapper background={background} isColored={isColored} />
+    <Wrapper background={background} isColored={isColored} roundedCorners={roundedCorners} />
   );
 }
 
 const Wrapper = styled.div`
   background: ${(props) => props.isColored ? props.background : '#bbb'};
+  border-radius: ${(props) => props.roundedCorners ? '50%' : '0'};
+  transition: all .1s;
 `;
 
 export default Tile;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import './App.css';
-import TileGrid from './components/TileGrid';
+import TileForm from './containers/TileForm';
 
 class App extends Component {
   render() {
@@ -17,7 +17,7 @@ class App extends Component {
           </div>
         </Cell>
         <Cell gridArea="Content">
-          <TileGrid />
+          <TileForm />
         </Cell>
         <Cell gridArea="Sidebar">Sidebar content</Cell>
       </AppWrapper>

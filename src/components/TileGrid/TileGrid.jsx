@@ -2,9 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Tile from '../Tile';
 
-const TileGrid = () => {
+const TileGrid = ({ roundedCorners }) => {
   const generateGrid = (numberOfTiles) => {
-    return Array(numberOfTiles).fill('').map((a, i) => <Tile key={i} background={'#ccc'} isColored={false} />);
+    return Array(numberOfTiles).fill('').map((a, i) => <Tile key={i} background={'#ccc'} isColored={false} roundedCorners={roundedCorners} />);
   }
 
   return (
@@ -18,11 +18,12 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-columns: repeat(5, 1fr);
-  max-width: 500px;
-  height: 500px;
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
   grid-gap: 10px;
   margin: auto;
-  padding-top: 80px;
+  padding-bottom: 10px;
 `;
 
 export default TileGrid;
