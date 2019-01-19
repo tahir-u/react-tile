@@ -1,10 +1,23 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Tile from '../Tile';
+import { generateArrayFromLength } from '../../utils';
 
-const TileGrid = ({ roundedCorners }) => {
-  const generateGrid = (numberOfTiles) => {
-    return Array(numberOfTiles).fill('').map((a, i) => <Tile key={i} background={'#ccc'} isColored={false} roundedCorners={roundedCorners} />);
+const TileGrid = ({ composition, roundedCorners }) => {
+  const generateGrid = () => {
+    const normalizedComposition = (composition === null) ?
+      generateArrayFromLength(25).map(() => false) :
+      composition;
+    return normalizedComposition.map((c, i) => {
+      return (
+        <Tile
+          key={i}
+          background={'#000'}
+          isColored={c}
+          roundedCorners={roundedCorners}
+        />
+      );
+    });
   }
 
   return (
@@ -21,7 +34,7 @@ const Grid = styled.div`
   width: 100%;
   max-width: 400px;
   height: 400px;
-  grid-gap: 10px;
+  grid-gap: 5px;
   margin: auto;
   padding-bottom: 10px;
 `;

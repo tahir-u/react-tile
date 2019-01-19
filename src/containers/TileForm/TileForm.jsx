@@ -1,17 +1,39 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import _ from 'lodash';
 import TileGrid from '../../components/TileGrid';
+import * as numberCompositions from '../../compositions/numbers/numbers';
+import { isNumber, isString, generateArrayFromLength, normalizeStringNumber } from '../../utils/';
+
 class TileForm extends React.Component {
   state = {
-    composition: '',
+    input: '',
+    composition: null,
     roundedCorners: false
   }
 
-  setComposition(evt) {
+  handleUserInput(evt) {
     evt.preventDefault();
     this.setState({
-      composition: evt.target.value
-    })
+      input: evt.target.value,
+      composition: this.setComposition(evt.target.value)
+    });
+  }
+
+  setComposition(input) {
+    if (isNumber(parseInt(input, 10)) && _.includes(generateArrayFromLength(10), parseInt(input, 10))) {
+      const composition = numberCompositions.numbers[input];
+      return composition;
+    } else if (isString(input)) {
+      const composition = normalizeStringNumber(input);
+      if (isNumber(composition)) {
+        return numberCompositions.numbers[composition];
+      } else {
+        return null;
+      }
+    } else {
+      return null;
+    }
   }
 
   setRoundedCorners(evt) {
@@ -24,7 +46,7 @@ class TileForm extends React.Component {
   render() {
     return (
       <Wrapper>
-        <TileGrid roundedCorners={this.state.roundedCorners} />
+        <TileGrid composition={this.state.composition} roundedCorners={this.state.roundedCorners} />
         <form>
           <div className="form-group">
             <label htmlFor="composition">Composition</label>
@@ -32,8 +54,8 @@ class TileForm extends React.Component {
               type="text"
               name="composition"
               className="form-control"
-              value={this.state.composition}
-              onChange={this.setComposition.bind(this)}
+              value={this.state.input}
+              onChange={this.handleUserInput.bind(this)}
             />
           </div>
           <div className="form-check">

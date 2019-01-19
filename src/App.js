@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import './App.css';
 import TileForm from './containers/TileForm';
+import Sidebar from './components/Sidebar';
+import { numberCardContents } from './compositions/numbers/numbers';
 
 class App extends Component {
   render() {
@@ -19,7 +21,9 @@ class App extends Component {
         <Cell gridArea="Content">
           <TileForm />
         </Cell>
-        <Cell gridArea="Sidebar">Sidebar content</Cell>
+        <Cell gridArea="Sidebar">
+          <Sidebar title="Supported" cardContents={numberCardContents} />
+        </Cell>
       </AppWrapper>
     );
   }
