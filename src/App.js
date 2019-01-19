@@ -7,16 +7,37 @@ class App extends Component {
   render() {
     return (
       <AppWrapper>
-        <TileGrid />
+        <Cell gridArea="Header">
+          <div className="jumbotron">
+            <div className="container">
+              <div className="row">
+                <h1 className="display-4">Enter a supported tile composition and see the result</h1>
+              </div>
+            </div>
+          </div>
+        </Cell>
+        <Cell gridArea="Content">
+          <TileGrid />
+        </Cell>
+        <Cell gridArea="Sidebar">Sidebar content</Cell>
       </AppWrapper>
     );
   }
 }
 
 const AppWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: #23262d;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas:
+    "Header Header Header"
+    "Content Content Sidebar"
+    "Content Content Sidebar";
+`;
+
+const Cell = styled.div`
+  grid-area: ${(props) => props.gridArea};
+  text-align: center;
 `;
 
 export default App;

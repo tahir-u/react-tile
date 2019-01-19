@@ -11,7 +11,7 @@ const Tile = ({
 }
 
 const Wrapper = styled.div`
-  background: ${(props) => props.isColored ? props.background : '#ccc'};
+  background: ${(props) => props.isColored ? props.background : '#bbb'};
 `;
 
 export default Tile;
