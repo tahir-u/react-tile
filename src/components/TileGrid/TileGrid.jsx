@@ -6,7 +6,7 @@ import { generateArrayFromLength } from '../../utils';
 const TileGrid = ({ composition, roundedCorners }) => {
   const generateGrid = () => {
     const normalizedComposition = (composition === null) ?
-      generateArrayFromLength(25).map(() => false) :
+      generateArrayFromLength(64).map(() => false) :
       composition;
     return normalizedComposition.map((c, i) => {
       return (
@@ -29,8 +29,8 @@ const TileGrid = ({ composition, roundedCorners }) => {
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   width: 100%;
   max-width: 400px;
   height: 400px;

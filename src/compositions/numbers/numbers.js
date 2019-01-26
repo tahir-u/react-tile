@@ -1,83 +1,113 @@
 import { generateArrayFromLength } from "../../utils";
 
 export const zero = [
-  false, true, true, true, false,
-  false, true, false, true, false,
-  false, true, false, true, false,
-  false, true, false, true, false,
-  false, true, true, true, false
+  false, false, false, true, true, false, false, false,
+  false, false, true, false, false, true, false, false,
+  false, false, true, false, false, true, false, false,
+  false, false, true, false, false, true, false, false,
+  false, false, true, false, false, true, false, false,
+  false, false, true, false, false, true, false, false,
+  false, false, true, false, false, true, false, false,
+  false, false, false, true, true, false, false, false,
 ];
 
 export const one = [
-  false, true, true, false, false,
-  false, false, true, false, false,
-  false, false, true, false, false,
-  false, false, true, false, false,
-  false, true, true, true, false
+  false, false, false, true, true, false, false, false,
+  false, false, true, true, true, false, false, false,
+  false, false, false, true, true, false, false, false,
+  false, false, false, true, true, false, false, false,
+  false, false, false, true, true, false, false, false,
+  false, false, false, true, true, false, false, false,
+  false, false, false, true, true, false, false, false,
+  false, false, true, true, true, true, false, false
 ];
 
 export const two = [
-  false, true, true, true, false,
-  false, false, false, true, false,
-  false, true, true, true, false,
-  false, true, false, false, false,
-  false, true, true, true, false
+  false, false, true, true, true, true, false, false,
+  false, true, true, false, false, true, true, false,
+  false, false, false, false, false, true, true, false,
+  false, false, false, false, true, true, false, false,
+  false, false, false, true, true, false, false, false,
+  false, false, true, true, false, false, false, false,
+  false, true, true, false, false, false, false, false,
+  false, true, true, true, true, true, true, true,
 ];
 
 export const three = [
-  false, true, true, true, false,
-  false, false, false, true, false,
-  false, true, true, true, false,
-  false, false, false, true, false,
-  false, true, true, true, false
+  false, false, false, true, true, true, false, false,
+  false, false, true, false, false, false, true, false,
+  false, false, false, false, false, false, true, false,
+  false, false, false, false, true, true, false, false,
+  false, false, false, false, false, false, true, false,
+  false, false, false, false, false, false, true, false,
+  false, false, true, false, false, false, true, false,
+  false, false, false, true, true, true, false, false
 ];
 
 export const four = [
-  false, true, false, true, false,
-  false, true, false, true, false,
-  false, true, true, true, false,
-  false, false, false, true, false,
-  false, false, false, true, false
+  false, false, false, false, true, true, false, false,
+  false, false, false, true, true, true, false, false,
+  false, false, true, false, true, true, false, false,
+  false, true, false, false, true, true, false, false,
+  true, true, true, true, true, true, true, false,
+  false, false, false, false, true, true, false, false,
+  false, false, false, false, true, true, false, false,
+  false, false, false, true, true, true, true, false
 ];
 
 export const five = [
-  false, true, true, true, false,
-  false, true, false, false, false,
-  false, true, true, true, false,
-  false, false, false, true, false,
-  false, true, true, true, false
+  false, true, true, true, true, true, true, false,
+  false, true, false, false, false, false, false, false,
+  false, true, false, false, false, false, false, false,
+  false, false, true, true, true, true, false, false,
+  false, false, false, false, false, false, true, false,
+  false, false, false, false, false, false, true, false,
+  false, false, false, false, false, true, false, false,
+  false, true, true, true, true, false, false, false
 ];
 
 export const six = [
-  false, true, true, true, false,
-  false, true, false, false, false,
-  false, true, true, true, false,
-  false, true, false, true, false,
-  false, true, true, true, false
+  false, false, true, true, true, true, false, false,
+  false, true, false, false, false, false, false, false,
+  false, true, false, false, false, false, false, false,
+  false, true, false, false, false, false, false, false,
+  false, true, true, true, true, true, true, false,
+  false, true, false, false, false, false, true, false,
+  false, true, false, false, false, false, true, false,
+  false, false, true, true, true, true, false, false
 ];
 
 export const seven = [
-  false, true, true, true, false,
-  false, false, false, true, false,
-  false, false, false, true, false,
-  false, false, false, true, false,
-  false, false, false, true, false
+  false, true, true, true, true, true, false, false,
+  false, false, false, false, false, false, true, false,
+  false, false, false, false, false, true, false, false,
+  false, false, false, false, true, false, false, false,
+  false, false, false, true, false, false, false, false,
+  false, false, false, true, false, false, false, false,
+  false, false, false, true, false, false, false, false,
+  false, false, false, true, false, false, false, false,
 ];
 
 export const eight = [
-  false, true, true, true, false,
-  false, true, false, true, false,
-  false, true, true, true, false,
-  false, true, false, true, false,
-  false, true, true, true, false
+  false, false, false, true, true, false, false, false,
+  false, false, true, false, false, true, false, false,
+  false, false, true, false, false, true, false, false,
+  false, false, false, true, true, false, false, false,
+  false, false, true, false, false, true, false, false,
+  false, false, true, false, false, true, false, false,
+  false, false, true, false, false, true, false, false,
+  false, false, false, true, true, false, false, false
 ];
 
 export const nine = [
-  false, true, true, true, false,
-  false, true, false, true, false,
-  false, true, true, true, false,
-  false, false, false, true, false,
-  false, true, true, true, false
+  false, false, true, true, true, true, false, false,
+  false, true, false, false, false, false, true, false,
+  false, true, false, false, false, false, true, false,
+  false, true, false, false, false, false, true, false,
+  false, false, true, true, true, true, true, false,
+  false, false, false, false, false, false, true, false,
+  false, false, false, false, false, false, true, false,
+  false, false, true, true, true, true, false, false,
 ];
 
 export const numbers = [zero, one, two, three, four, five, six, seven, eight, nine];
