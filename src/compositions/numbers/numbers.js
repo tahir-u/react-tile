@@ -12,14 +12,14 @@ export const zero = [
 ];
 
 export const one = [
+  false, false, false, false, true, false, false, false,
   false, false, false, true, true, false, false, false,
-  false, false, true, true, true, false, false, false,
-  false, false, false, true, true, false, false, false,
-  false, false, false, true, true, false, false, false,
-  false, false, false, true, true, false, false, false,
-  false, false, false, true, true, false, false, false,
-  false, false, false, true, true, false, false, false,
-  false, false, true, true, true, true, false, false
+  false, false, false, false, true, false, false, false,
+  false, false, false, false, true, false, false, false,
+  false, false, false, false, true, false, false, false,
+  false, false, false, false, true, false, false, false,
+  false, false, false, false, true, false, false, false,
+  false, false, false, true, true, true, false, false
 ];
 
 export const two = [
@@ -30,7 +30,7 @@ export const two = [
   false, false, false, true, true, false, false, false,
   false, false, true, true, false, false, false, false,
   false, true, true, false, false, false, false, false,
-  false, true, true, true, true, true, true, true,
+  false, true, true, true, true, true, true, false,
 ];
 
 export const three = [

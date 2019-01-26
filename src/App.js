@@ -4,10 +4,8 @@ import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import './App.css';
 import TileForm from './containers/TileForm';
-import Sidebar from './components/Sidebar';
 import Navigation from './components/Navigation';
 import TileEditor from './containers/TileEditor';
-import { numberCardContents } from './compositions/numbers/numbers';
 
 class App extends Component {
   render() {
@@ -32,9 +30,6 @@ class App extends Component {
               <Route path="/editor" exact={true} component={TileEditor} />
             </Switch>
           </Cell>
-          <Cell gridArea="Sidebar">
-            <Sidebar title="Supported" cardContents={numberCardContents} />
-          </Cell>
         </AppWrapper>
       </Router>
     );
@@ -48,8 +43,7 @@ const AppWrapper = styled.div`
   grid-template-areas:
     "Navigation Navigation Navigation"
     "Header Header Header"
-    "Content Content Sidebar"
-    "Content Content Sidebar";
+    "Content Content Content";
 `;
 
 const Cell = styled.div`

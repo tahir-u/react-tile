@@ -2,7 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
 import TileGrid from '../../components/TileGrid';
+import Sidebar from '../../components/Sidebar';
 import * as numberCompositions from '../../compositions/numbers/numbers';
+import { numberCardContents } from '../../compositions/numbers/numbers';
 import { isNumber, isString, generateArrayFromLength, normalizeStringNumber } from '../../utils/';
 
 class TileForm extends React.Component {
@@ -46,41 +48,51 @@ class TileForm extends React.Component {
   render() {
     return (
       <Wrapper>
-        <TileGrid composition={this.state.composition} roundedCorners={this.state.roundedCorners} />
-        <form>
-          <div className="form-group">
-            <label htmlFor="composition">Composition</label>
-            <input
-              type="text"
-              name="composition"
-              className="form-control"
-              value={this.state.input}
-              onChange={this.handleUserInput.bind(this)}
-            />
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="corners"
-              className="form-check-input"
-              value={this.state.roundedCorners}
-              checked={this.state.roundedCorners}
-              onChange={this.setRoundedCorners.bind(this)}
-            />
-            <label htmlFor="corners" className="form-check-label">Rounded corners</label>
-          </div>
-        </form>
+        <Cell gridArea="Content">
+          <TileGrid composition={this.state.composition} roundedCorners={this.state.roundedCorners} />
+          <form>
+            <div className="form-group">
+              <label htmlFor="composition">Composition</label>
+              <input
+                type="text"
+                name="composition"
+                className="form-control"
+                value={this.state.input}
+                onChange={this.handleUserInput.bind(this)}
+              />
+            </div>
+            <div className="form-check">
+              <input
+                type="checkbox"
+                name="corners"
+                className="form-check-input"
+                value={this.state.roundedCorners}
+                checked={this.state.roundedCorners}
+                onChange={this.setRoundedCorners.bind(this)}
+              />
+              <label htmlFor="corners" className="form-check-label">Rounded corners</label>
+            </div>
+          </form>
+        </Cell>
+        <Cell gridArea="Sidebar">
+          <Sidebar title="Supported" cardContents={numberCardContents} />
+        </Cell>
       </Wrapper>
     );
   }
 }
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas: "Content Sidebar";
   padding-top: 20px;
+`;
+
+const Cell = styled.div`
+  grid-area: ${(props) => props.gridArea};
+  margin: 0 24px;
 `;
 
 export default TileForm;
